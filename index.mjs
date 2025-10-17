@@ -14,15 +14,14 @@ app.get('/', async (req, res) => {
    res.render("home.ejs", {imageUrl});
 });
 
-app.get('/mercury', (req, res) => {
-   let planetInfo = solarSystem.getMercury();
-   res.render("mercury.ejs", {planetInfo});
-});
-
 app.get('/planet', (req, res) => {
    let planet_name = req.query.planetName;
    let planetInfo = solarSystem[`get${planet_name}`]();
    res.render("planetInfo.ejs", {planetInfo, planet_name});
+});
+
+app.get('/nasa-pod', (req, res) => {
+   res.render("nasa-pod.ejs");
 });
 
 app.listen(3000, () => {
