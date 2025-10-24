@@ -24,6 +24,14 @@ app.get('/nasa-pod', (req, res) => {
    res.render("nasa-pod.ejs");
 });
 
+app.get('/asteroids', (req, res) => {
+   res.render("asteroids.ejs");
+});
+
+app.get('/comets', (req, res) => {
+   res.render("comets.ejs");
+});
+
 app.listen(3000, () => {
    console.log('server started');
 });
