@@ -15,7 +15,16 @@
 
 <body>
   <%- include ("partials/navbar.ejs") %>
-
+  <div class="wrapper">
+    <h1>Comets</h1>
+    <div class="flex-comet"></iv>
+      <img src="<%=comets.image %>" width="500">
+      <div>
+        <h3><%=comets.def%></h3>
+        <p><a href="<%= comets.link %>" target="_blank" rel="noopener noreferrer">Learn more here</a></p>
+      </div>
+    </div>
+  </div>
   <%- include ("partials/footer.ejs") %>
 </body>
 

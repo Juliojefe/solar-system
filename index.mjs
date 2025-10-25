@@ -7,7 +7,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.get('/', async (req, res) => {
-   let rawRes = await fetch("https://pixabay.com/api/?key=5589438-47a0bca778bf23fc2e8c5bf3e&per_page=50&orientation=horizontal&q=solar+system");
+   let rawRes = await fetch("https://pixabay.com/api/?key=5589438-47a0bca778bf23fc2e8c5bf3e&per_page=50&orientation=horizontal&q=milky+way");
    let response = await rawRes.json();
    let randomHitIndex = Math.floor(Math.random() * response.hits.length);
    let imageUrl = response.hits[randomHitIndex].largeImageURL;
@@ -25,11 +25,13 @@ app.get('/nasa-pod', (req, res) => {
 });
 
 app.get('/asteroids', (req, res) => {
-   res.render("asteroids.ejs");
+   let asteroids = solarSystem.getAsteroids();
+   res.render("asteroids.ejs", {asteroids});
 });
 
 app.get('/comets', (req, res) => {
-   res.render("comets.ejs");
+   let comets = solarSystem.getComets();
+   res.render("comets.ejs", {comets});
 });
 
 app.listen(3000, () => {

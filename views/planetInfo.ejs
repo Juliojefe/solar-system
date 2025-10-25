@@ -15,15 +15,21 @@
 
 <body>
   <%- include ("partials/navbar.ejs") %>
-  <h2><%=planet_name%></h2>
-  <p><%=planetInfo.description%></p>
-  <br>
-  <img src="<%=planetInfo.image %>" width="300">
-  <p>Distance from sun: <%=planetInfo.distanceFromSun%></p>
-  <p>Year length: <%=planetInfo.yearLength%></p>
-  <p>Radius: <%=planetInfo.radius%></p>
-  <p>One earth day: <%=planetInfo.oneEarthDay%></p>
-  <p>Moons: <%=planetInfo.moons%></p>
+  <div class="wrapper">
+    <h1><%=planet_name%></h1>
+    <h3><%=planetInfo.description%></h3>
+    <br>
+    <div class="flex">
+      <img src="<%=planetInfo.image %>">
+      <div>
+        <h5>Distance from sun: <%=planetInfo.distanceFromSun%></h5>
+        <h5>Year length: <%=planetInfo.yearLength%></h5>
+        <h5>Radius: <%=planetInfo.radius%></h5>
+        <h5>One earth day: <%=planetInfo.oneEarthDay%></h5>
+        <h5>Moons: <%=planetInfo.moons%></h5>
+      </div>
+    </div>
+  </div>
   <%- include ("partials/footer.ejs") %>
 </body>
 

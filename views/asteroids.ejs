@@ -15,7 +15,16 @@
 
 <body>
   <%- include ("partials/navbar.ejs") %>
-
+  <div class="wrapper">
+    <h1>Asteroids</h1>
+    <div class="flex">
+      <img src="<%=asteroids.image %>">
+      <div>
+        <h3><%=asteroids.def%></h3>
+        <p><a href="<%= asteroids.link %>" target="_blank" rel="noopener noreferrer">Learn more here</a></p>
+      </div>
+    </div>
+  </div>
   <%- include ("partials/footer.ejs") %>
 </body>
 
